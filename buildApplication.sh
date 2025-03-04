@@ -8,8 +8,8 @@ echo "Eseguendo docker compose up -d"
 docker compose up -d
 
 # Aspetto per far partire i servizi, (colpa del mio pc patata :/ )
-echo "Aspetto per far partire i servizi ZZZ...." 
-sleep 30;
+echo "Aspetto per dare tempo ai container di scaricare tutte le dipendenze ZZZ...." 
+sleep 50;
 
 # Mi collego al container project_laravel ed eseguo migrazioni e seeder (Lo faccio qui così che al termine di questo script sia tutto pronto)
 echo "Eseguo migrazioni e seeder del progetto"
