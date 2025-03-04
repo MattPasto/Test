@@ -1,0 +1,70 @@
+/** Foglio di stile con le regole generali dell'interfaccia */
+
+/**
+* Div per le tabelle 
+*/
+.table-div {
+  width: 90%;
+  margin: auto;
+  margin-top: 2%;
+  margin-bottom: 3%;
+}
+
+/** 
+* Intestazione delle tabelle 
+*/
+th {
+  background-color: #faf3f3;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+/** 
+* Alterna il colore tra una riga e l'altra delle tabelle per migliorarne la legibilità
+*/
+tr:nth-child(even) {
+  background-color: #faf3f3;
+}
+
+/**
+* Spinner per il caricamento delle liste 
+*/
+.spinner-div {
+  margin: auto;
+  text-align: center;
+  margin-top: 7%;
+}
+
+/** 
+* Titoli 
+*/
+h1 {
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding-bottom: 1%;
+}
+
+h4 {
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding-bottom: 1%;
+}
+
+h5 {
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding-bottom: 1%;
+  padding-top: 10%;
+}
+
+/**
+* Componente Row 
+*/
+.row {
+  padding-top: 3%;
+  min-width: 700px;
+  width: 100%;
+}

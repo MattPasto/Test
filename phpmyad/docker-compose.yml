@@ -1,0 +1,11 @@
+services:
+  phpmyadmin:
+    container_name: $CONTAINER_NAME
+    image: $DOCKER_IMAGE
+    restart: unless-stopped
+    environment:
+      PMA_HOSTS: $PMA_HOSTS
+      PMA_PORTS: $PMA_PORTS
+    ports:
+      - $EXTERNAL_PORT:80
+    

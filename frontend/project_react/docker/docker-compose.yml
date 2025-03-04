@@ -1,0 +1,15 @@
+services:
+  react_project:
+    restart: unless-stopped
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        IMAGE: $IMAGE
+        TZ: $TZ
+    env_file: .env
+    entrypoint: sh $ENTRYPOINT_PATH
+    volumes:
+      - ./$PROJECT_DIR:$CONTAINER_DIR  # File progetto
+    ports:
+      - $EXTERNAL_PORT:$INTERNAL_PORT 

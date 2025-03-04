@@ -1,0 +1,21 @@
+services:
+  project_laravel:
+    restart: unless-stopped
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        IMAGE: $IMAGE
+        TZ: $TZ
+    env_file: .env
+    working_dir: $CONTAINER_DIR
+    container_name: $CONTAINER_NAME
+    entrypoint: sh $ENTRYPOINT_PATH
+    volumes:
+      - ./$PROJECT_DIR:$CONTAINER_DIR                           # File progetto
+      - ./$APACHE_LOCAL_CONF_FILE:$APACHE_REMOTE_CONF_FILE      # Apache
+      - ./$APACHE_LOCAL_SITE_DIR:$APACHE_REMOTE_SITE_DIR        # Siti Apache
+    expose:
+      - $INTERNAL_PORT
+    ports:
+      - $EXTERNAL_PORT:$INTERNAL_PORT

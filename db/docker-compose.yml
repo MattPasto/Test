@@ -1,0 +1,32 @@
+services:
+  mysql_dev:
+    image: $DOCKER_IMAGE
+    container_name: $DEV_CONTAINER
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: $DEV_ROOT_PASSWORD
+      MYSQL_USER: $DEV_USER
+      MYSQL_PASSWORD: $DEV_PASSWORD
+      MYSQL_DATABASE: $DEV_DATABASE
+    ports:
+      - "$DEV_PORT:3306"
+    volumes:
+      - dev_db_data:/var/lib/mysql
+
+  mysql_test:
+    image: $DOCKER_IMAGE
+    container_name: $TEST_CONTAINER
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: $TEST_ROOT_PASSWORD
+      MYSQL_USER: $TEST_USER
+      MYSQL_PASSWORD: $TEST_PASSWORD
+      MYSQL_DATABASE: $TEST_DATABASE
+    ports:
+      - "$TEST_PORT:3306"
+    volumes:
+      - test_db_data:/var/lib/mysql
+
+volumes:
+  dev_db_data:
+  test_db_data:

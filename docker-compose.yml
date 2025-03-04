@@ -1,0 +1,7 @@
+name: webapp
+
+include:
+  - db/docker-compose.yml
+  - phpmyad/docker-compose.yml
+  - backend/project_laravel/server/docker/docker-compose.yml
+  - frontend/project_react/docker/docker-compose.yml
