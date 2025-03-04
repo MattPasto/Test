@@ -1,5 +1,5 @@
 services:
-  react_project:
+  project_react:
     restart: unless-stopped
     build:
       context: .
